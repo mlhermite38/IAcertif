@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mémo Interactif : L'IA et la Matrice DREAMS chez Petzl</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        /* --- Tab Styles --- */
+        .tab-active {
+            background-color: #FBBF24; /* Petzl yellow/orange accent */
+            color: #1F2937;
+            font-weight: 600;
+        }
+        .table-header-custom {
+            background-color: #374151;
+            color: #F9FAFB;
+        }
+
+        /* --- Flip Card Styles --- */
+        .flip-card-container {
+            background-color: transparent;
+            width: 100%;
+            height: 180px;
+            perspective: 1000px; /* Needed for 3D effect */
+        }
+        .flip-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+        }
+        .flip-card-container:hover .flip-card-inner {
+            transform: rotateY(180deg);
+        }
+        .flip-card-front, .flip-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            -webkit-backface-visibility: hidden; /* Safari */
+            backface-visibility: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            border-radius: 0.5rem;
+            background-color: #4B5563; /* Gray-600 */
+        }
+        .flip-card-back {
+            background-color: #374151; /* Gray-700 */
+            transform: rotateY(180deg);
+        }
+    </style>
+</head>
+<body class="bg-gray-800 text-gray-200">
+
+    <div class="container mx-auto p-4 md:p-8">
+
+        <!-- Header Section -->
+        <header class="text-center mb-10 border-b border-gray-600 pb-6">
+            <h1 class="text-4xl font-bold text-white mb-2">L'IA comme Partenaire Stratégique</h1>
+            <p class="text-xl text-gray-400">Utiliser la matrice <span class="font-bold text-amber-400">DREAMS</span> pour nos métiers chez Petzl</p>
+        </header>
+
+        <!-- DREAMS Explanation Section -->
+        <section class="mb-12">
+            <h2 class="text-2xl font-semibold text-white mb-6 text-center">La Matrice DREAMS : Un Langage Commun pour Collaborer avec l'IA</h2>
+            <p class="text-center text-gray-300 max-w-3xl mx-auto mb-8">
+                Pointez votre curseur sur une carte pour révéler sa signification. Le principe est simple : vous restez le stratège qui pose les bonnes questions, et l'IA devient un assistant surpuissant qui exécute.
+            </p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- DIVERGE Card -->
+                <div class="flip-card-container">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#FBBF24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v5m0 10v5M4.2 4.2l3.5 3.5M16.3 16.3l3.5 3.5M2 12h5m10 0h5M4.2 19.8l3.5-3.5M16.3 7.7l3.5-3.5"/></svg>
+                            <h3 class="text-xl font-bold text-amber-400 mt-2">Diverge (Explorer)</h3>
+                        </div>
+                        <div class="flip-card-back">
+                            <p class="text-gray-300">Générer un large éventail d'idées, d'options, ou de variations de contenu. Idéal pour le brainstorming ou pour explorer toutes les facettes d'un problème.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- REVIEW Card -->
+                <div class="flip-card-container">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#FBBF24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+                            <h3 class="text-xl font-bold text-amber-400 mt-2">Review (Vérifier)</h3>
+                        </div>
+                        <div class="flip-card-back">
+                            <p class="text-gray-300">Demander à l'IA de vérifier un contenu en se basant sur des règles, des normes ou une base de connaissances. Parfait pour la relecture ou la détection d'écarts.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- EDIT Card -->
+                <div class="flip-card-container">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#FBBF24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"/><path d="m15 5 4 4"/></svg>
+                            <h3 class="text-xl font-bold text-amber-400 mt-2">Edit (Modifier)</h3>
+                        </div>
+                        <div class="flip-card-back">
+                            <p class="text-gray-300">Raffiner, reformuler ou corriger un contenu existant. Pour améliorer la clarté, le ton, le style ou simplement corriger des erreurs.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- ANALYZE Card -->
+                <div class="flip-card-container">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#FBBF24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M18.7 8a2.4 2.4 0 0 0-3.4 0L6.6 16.7a2.4 2.4 0 0 0 0 3.4l3.6 3.6a2.4 2.4 0 0 0 3.4 0L22.3 15a2.4 2.4 0 0 0 0-3.4Z"/></svg>
+                            <h3 class="text-xl font-bold text-amber-400 mt-2">Analyze (Analyser)</h3>
+                        </div>
+                        <div class="flip-card-back">
+                            <p class="text-gray-300">Extraire des informations clés, identifier des tendances ou résumer de grands volumes de données. Transformer l'information brute en connaissance.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- MORPH Card -->
+                <div class="flip-card-container">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#FBBF24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m21.73 18-8-14a2 2 0 0 0-3.46 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><path d="M12 9v4"/></svg>
+                            <h3 class="text-xl font-bold text-amber-400 mt-2">Morph (Transformer)</h3>
+                        </div>
+                        <div class="flip-card-back">
+                            <p class="text-gray-300">Convertir un contenu d'un format à un autre. Par exemple, transformer un rapport en présentation, ou des notes en un e-mail formel.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- SEARCH Card -->
+                <div class="flip-card-container">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#FBBF24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+                            <h3 class="text-xl font-bold text-amber-400 mt-2">Search (Rechercher)</h3>
+                        </div>
+                        <div class="flip-card-back">
+                            <p class="text-gray-300">Trouver des informations spécifiques dans de vastes ensembles de données, qu'ils soient internes (nos serveurs) ou externes (le web).</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Interactive Use Cases Section -->
+        <section class="mb-12">
+            <h2 class="text-2xl font-semibold text-white mb-6 text-center">Nos cas d'usage concrets</h2>
+            <div class="mb-4 flex flex-wrap justify-center border-b border-gray-600">
+                <button class="tab-button py-2 px-4 block hover:text-amber-400 focus:outline-none tab-active" onclick="openTab(event, 'certification')">1. Certification Produit</button>
+                <button class="tab-button py-2 px-4 block hover:text-amber-400 focus:outline-none" onclick="openTab(event, 'normalisation')">2. Normalisation</button>
+                <button class="tab-button py-2 px-4 block hover:text-amber-400 focus:outline-none" onclick="openTab(event, 'risques')">3. Analyse des Risques</button>
+            </div>
+            <div class="p-4 bg-gray-900/50 rounded-lg">
+                <!-- Certification Tab -->
+                <div id="certification" class="tab-content">
+                    <h3 class="text-xl font-bold text-white mb-4">Exemple : Création d'une documentation technique pour un casque</h3>
+                    <div class="overflow-x-auto"><table class="min-w-full text-sm text-left text-gray-300 rounded-lg overflow-hidden"><thead class="table-header-custom text-xs uppercase"><tr><th scope="col" class="px-6 py-3 w-1/6">DREAMS</th><th scope="col" class="px-6 py-3 w-3/6">Votre Rôle (Le Stratège & Expert)</th><th scope="col" class="px-6 py-3 w-2/6">Rôle de l'IA (L'Assistant)</th></tr></thead><tbody>
+                        <tr class="border-b border-gray-700"><td class="px-6 py-4 font-bold text-amber-400">Diverge</td><td class="px-6 py-4">Vous demandez à explorer toutes les options : "Propose 3 structures différentes pour ce dossier technique, en t'inspirant de nos dossiers précédents."</td><td class="px-6 py-4">Génère plusieurs plans possibles pour le dossier, offrant des angles différents pour la présentation des preuves.</td></tr>
+                        <tr class="border-b border-gray-700"><td class="px-6 py-4 font-bold text-amber-400">Review</td><td class="px-6 py-4">Vous donnez la règle : "Vérifie que chaque exigence de la norme EN 12492 est couverte par un document ou un paragraphe dans le dossier."</td><td class="px-6 py-4">Compare la liste des exigences de la norme avec le contenu du dossier et signale les manques ou les faiblesses.</td></tr>
+                        <tr class="border-b border-gray-700"><td class="px-6 py-4 font-bold text-amber-400">Edit</td><td class="px-6 py-4">Vous fournissez l'expertise brute : "Prends mes notes sous forme de bullet points et rédige la section sur les essais de matériaux."</td><td class="px-6 py-4">Transforme vos notes en un paragraphe technique formel, cohérent et bien structuré, prêt à être intégré.</td></tr>
+                        <tr class="border-b border-gray-700"><td class="px-6 py-4 font-bold text-amber-400">Analyze</td><td class="px-6 py-4">Vous ciblez l'analyse : "Extrait les valeurs des tests d'impact de ce rapport et compare-les aux seuils de la norme."</td><td class="px-6 py-4">Lit le rapport de test, extrait les données chiffrées pertinentes et les présente dans un tableau comparatif face aux exigences.</td></tr>
+                        <tr class="border-b border-gray-700"><td class="px-6 py-4 font-bold text-amber-400">Morph</td><td class="px-6 py-4">Vous définissez le besoin : "Transforme ce dossier technique complet en une présentation de 10 slides pour la revue de projet."</td><td class="px-6 py-4">Crée une présentation PowerPoint ou Google Slides, avec un titre par slide et des points clés résumant chaque section majeure du dossier.</td></tr>
+                        <tr class="border-b border-gray-700"><td class="px-6 py-4 font-bold text-amber-400">Search</td><td class="px-6 py-4">Vous posez la question précise : "Trouve tous les rapports de tests, fiches matériaux et exigences liés au casque X pour la norme EN 12492."</td><td class="px-6 py-4">Scanne les bases de données internes et remonte une liste de documents pertinents avec des liens directs.</td></tr>
+                    </tbody></table></div>
+                </div>
+                <!-- Normalisation Tab -->
+                <div id="normalisation" class="tab-content" style="display:none">
+                    <h3 class="text-xl font-bold text-white mb-4">Exemple : Compte-rendu et communication suite à un comité de normalisation</h3>
+                    <div class="overflow-x-auto"><table class="min-w-full text-sm text-left text-gray-300 rounded-lg overflow-hidden"><thead class="table-header-custom text-xs uppercase"><tr><th scope="col" class="px-6 py-3 w-1/6">DREAMS</th><th scope="col" class="px-6 py-3 w-3/6">Votre Rôle (Le Stratège & Expert)</th><th scope="col" class="px-6 py-3 w-2/6">Rôle de l'IA (L'Assistant)</th></tr></thead><tbody>
+                        <tr class="border-b border-gray-700"><td class="px-6 py-4 font-bold text-amber-400">Diverge</td><td class="px-6 py-4">Vous lancez la réflexion : "Brainstorme tous les impacts potentiels de cette nouvelle exigence sur notre gamme de connecteurs."</td><td class="px-6 py-4">Génère une liste d'impacts potentiels : techniques, industriels, commerciaux, marketing, et même sur les produits concurrents.</td></tr>
+                        <tr class="border-b border-gray-700"><td class="px-6 py-4 font-bold text-amber-400">Review</td><td class="px-6 py-4">Vous donnez un objectif de relecture : "Relis mon projet d'argumentaire et assure-toi qu'il est factuel et non agressif."</td><td class="px-6 py-4">Analyse le ton du texte et suggère des reformulations pour le rendre plus diplomatique et basé sur des preuves techniques.</td></tr>
+                        <tr class="border-b border-gray-700"><td class="px-6 py-4 font-bold text-amber-400">Edit</td><td class="px-6 py-4">Vous apportez votre analyse de fond, les non-dits, les enjeux politiques, et demandez à l'IA d'intégrer ces nuances.</td><td class="px-6 py-4">Rédige une première version du compte-rendu formel puis l'affine avec vos ajouts stratégiques pour en faire un document d'intelligence.</td></tr>
+                        <tr class="border-b border-gray-700"><td class="px-6 py-4 font-bold text-amber-400">Analyze</td><td class="px-6 py-4">Vous fournissez la matière brute : "Analyse la transcription de cette réunion de 4h et identifie les décisions clés et les points d'action."</td><td class="px-6 py-4">Traite la transcription, identifie les intervenants, résume les décisions prises et liste les tâches assignées à chaque partie.</td></tr>
+                        <tr class="border-b border-gray-700"><td class="px-6 py-4 font-bold text-amber-400">Morph</td><td class="px-6 py-4">Vous segmentez l'audience : "À partir du compte-rendu, crée un e-mail pour le BE, une note pour la Qualité et un résumé pour le Management."</td><td class="px-6 py-4">Génère 3 communications distinctes, adaptant le niveau de détail et le vocabulaire à chaque public cible.</td></tr>
+                        <tr class="border-b border-gray-700"><td class="px-6 py-4 font-bold text-amber-400">Search</td><td class="px-6 py-4">Vous cherchez des arguments : "Retrouve le moment exact où l'expert italien a argumenté contre notre proposition dans la transcription."</td><td class="px-6 py-4">Recherche le passage spécifique dans la transcription et vous le fournit avec le contexte de la conversation.</td></tr>
+                    </tbody></table></div>
+                </div>
+                <!-- Risques Tab -->
+                <div id="risques" class="tab-content" style="display:none">
+                    <h3 class="text-xl font-bold text-white mb-4">Exemple : Benchmark de la concurrence pour une analyse de risques d'usage</h3>
+                    <div class="overflow-x-auto"><table class="min-w-full text-sm text-left text-gray-300 rounded-lg overflow-hidden"><thead class="table-header-custom text-xs uppercase"><tr><th scope="col" class="px-6 py-3 w-1/6">DREAMS</th><th scope="col" class="px-6 py-3 w-3/6">Votre Rôle (Le Stratège & Expert)</th><th scope="col" class="px-6 py-3 w-2/6">Rôle de l'IA (L'Assistant)</th></tr></thead><tbody>
+                        <tr class="border-b border-gray-700"><td class="px-6 py-4 font-bold text-amber-400">Diverge</td><td class="px-6 py-4">Vous stimulez la créativité : "Imagine des scénarios de mauvais usage extrêmes ou improbables pour notre futur assureur."</td><td class="px-6 py-4">Génère une liste de scénarios, des plus évidents aux plus créatifs, pour nourrir l'AMDEC et challenger la conception.</td></tr>
+                        <tr class="border-b border-gray-700"><td class="px-6 py-4 font-bold text-amber-400">Review</td><td class="px-6 py-4">Vous cadrez la vérification : "Compare notre projet d'AMDEC avec les risques identifiés chez les concurrents et signale les oublis."</td><td class="px-6 py-4">Effectue une analyse d'écart entre votre AMDEC et la base de connaissances des risques concurrents.</td></tr>
+                        <tr class="border-b border-gray-700"><td class="px-6 py-4 font-bold text-amber-400">Edit</td><td class="px-6 py-4">Vous visez la clarté : "Reformule les descriptions de ces 5 risques dans l'AMDEC pour qu'elles soient claires et non-ambiguës."</td><td class="px-6 py-4">Propose des reformulations en utilisant un langage simple et précis pour éviter toute mauvaise interprétation.</td></tr>
+                        <tr class="border-b border-gray-700"><td class="px-6 py-4 font-bold text-amber-400">Analyze</td><td class="px-6 py-4">Vous priorisez : "Catégorise les risques trouvés par fréquence d'apparition dans les forums et par gravité perçue."</td><td class="px-6 py-4">Analyse sémantiquement les retours d'utilisateurs pour classer les risques et vous aider à identifier les points les plus critiques.</td></tr>
+                        <tr class="border-b border-gray-700"><td class="px-6 py-4 font-bold text-amber-400">Morph</td><td class="px-6 py-4">Vous demandez une vue d'ensemble : "Transforme ce tableau AMDEC en une 'carte des risques' visuelle."</td><td class="px-6 py-4">Génère une représentation graphique (ex: matrice gravité/probabilité) des risques pour une communication plus impactante.</td></tr>
+                        <tr class="border-b border-gray-700"><td class="px-6 py-4 font-bold text-amber-400">Search</td><td class="px-6 py-4">Vous lancez la veille : "Cherche sur le web les infos sur les mauvais usages des produits concurrents X, Y, Z."</td><td class="px-6 py-4">Scanne forums, vidéos, notices et bases de rappels pour compiler toutes les informations pertinentes sur les risques connus.</td></tr>
+                    </tbody></table></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- To Go Deeper Section -->
+        <section>
+            <h2 class="text-2xl font-semibold text-white mb-6 text-center">Pour aller plus loin : À vous de jouer !</h2>
+            <div class="max-w-3xl mx-auto bg-gray-900/50 p-6 rounded-lg">
+                <p class="text-center text-gray-300 mb-6">
+                    La qualité de la réponse de l'IA dépend directement de la qualité de votre instruction (le "prompt"). Une bonne instruction est précise et donne du contexte. Voici un modèle de "prompt expert" que vous pouvez copier et adapter pour commencer à expérimenter.
+                </p>
+                <div class="bg-gray-900 p-4 rounded-lg border border-gray-600">
+                    <p class="text-gray-400 text-sm mb-2 font-mono"># Prompt Expert de Départ</p>
+                    <code class="text-white whitespace-pre-wrap">
+Agis en tant qu'expert en [votre domaine d'expertise, ex: conformité réglementaire des EPI].
+
+En te basant sur le document suivant :
+"""
+[copiez-collez ici votre texte, rapport, transcription, etc.]
+"""
+
+Ta mission est de [action DREAMS, ex: Analyser ce texte pour en extraire les 5 points clés].
+
+Le public cible pour ta réponse est [public, ex: des ingénieurs du Bureau d'Études].
+
+Le format de sortie doit être [format, ex: une liste à puces].
+                    </code>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <script>
+        // JavaScript for tab functionality
+        function openTab(event, tabName) {
+            const tabcontent = document.getElementsByClassName("tab-content");
+            for (let i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            const tabbuttons = document.getElementsByClassName("tab-button");
+            for (let i = 0; i < tabbuttons.length; i++) {
+                tabbuttons[i].className = tabbuttons[i].className.replace(" tab-active", "");
+            }
+            document.getElementById(tabName).style.display = "block";
+            event.currentTarget.className += " tab-active";
+        }
+    </script>
+
+</body>
+</html>
